@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Workflow Orchestration & System Architecture | Agentic Marketing Pro</title>
+  <meta name="description" content="Technical deep dive into connecting legacy databases to modern AI agents. Learn about n8n orchestration architecture, self-hosted automation security, and scalable data pipeline design.">
+  <meta name="keywords" content="workflow orchestration, n8n architecture, legacy database integration, AI agent connectivity, self-hosted automation, data pipeline scalability">
+  <meta name="author" content="Agentic Marketing Pro">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Workflow Orchestration & System Architecture | Agentic Marketing Pro">
+  <meta property="og:description" content="Technical architecture for connecting legacy systems to modern AI agents with enterprise-grade security and scalability.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://shafinrng.github.io/amp-hub-api-integrations/orchestration.html">
+  <meta property="og:site_name" content="Agentic Marketing Pro - API Integration Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Workflow Orchestration & System Architecture">
+  <meta name="twitter:description" content="How we architect secure, scalable automation systems for enterprise connectivity.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://shafinrng.github.io/amp-hub-api-integrations/orchestration.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>⚡</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Workflow Orchestration & System Architecture for Enterprise API Integrations",
+    "description": "Technical deep dive into connecting legacy databases to modern AI agents using n8n orchestration and self-hosted automation infrastructure.",
+    "url": "https://shafinrng.github.io/amp-hub-api-integrations/orchestration.html",
+    "author": {
+      "@type": "Organization",
+      "name": "Agentic Marketing Pro",
+      "url": "https://agenticmarketingpro.com/"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Agentic Marketing Pro"
+    },
+    "about": {
+      "@type": "Thing",
+      "name": "API Integration Architecture"
+    }
+  }
+  </script>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="./index.html" class="nav-brand" aria-label="Agentic Marketing Pro Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="url(#brand-gradient)"/>
+          <path d="M8 16h6v6H8zM18 10h6v6h-6zM8 10h6v4H8zM18 18h6v4h-6z" fill="white" opacity="0.9"/>
+          <defs>
+            <linearGradient id="brand-gradient" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#00d4c8"/>
+              <stop offset="100%" stop-color="#00a8ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Agentic Marketing Pro</span>
+      </a>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="./index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="./orchestration.html" role="menuitem" class="active">Orchestration</a></li>
+        <li role="none"><a href="./glossary.html" role="menuitem">Glossary</a></li>
+        <li role="none"><a href="https://agenticmarketingpro.com/blog/" role="menuitem" target="_blank" rel="noopener">Blog</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="https://agenticmarketingpro.com/book-appointment/" class="btn btn-primary" target="_blank" rel="noopener">Book a Session</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero section-lg" style="min-height: 70vh;" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="16 18 22 12 16 6"/>
+              <polyline points="8 6 2 12 8 18"/>
+            </svg>
+            Technical Architecture
+          </span>
+        </div>
+        <h1>
+          Orchestrating <span class="text-gradient">Legacy Systems</span>
+          with Modern AI Agents
+        </h1>
+        <p class="hero-description">
+          How we architect secure, scalable automation pipelines that bridge decades-old infrastructure
+          with cutting-edge AI. No rip-and-replace required.
+        </p>
+        <div class="hero-cta">
+          <a href="https://agenticmarketingpro.com/book-appointment/" class="btn btn-primary" target="_blank" rel="noopener">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+              <line x1="16" y1="2" x2="16" y2="6"/>
+              <line x1="8" y1="2" x2="8" y2="6"/>
+              <line x1="3" y1="10" x2="21" y2="10"/>
+            </svg>
+            Book an Architecture Session
+          </a>
+          <a href="#architecture" class="btn btn-secondary">
+            See the Architecture
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Architecture Overview -->
+  <section class="section" id="architecture" aria-label="Architecture Overview">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">System Design</span>
+        <h2>The <span class="text-gradient">Integration Architecture</span></h2>
+        <p>A layered approach that abstracts complexity, ensures security at every junction, and scales elastically with your data volume.</p>
+      </div>
+
+      <div class="architecture-diagram reveal">
+        <div class="arch-layers">
+          <!-- Presentation Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-label">Interface Layer</span>
+            <div class="arch-layer-content">
+              <span class="arch-item">Dashboards</span>
+              <span class="arch-item">Webhooks</span>
+              <span class="arch-item">API Gateway</span>
+              <span class="arch-item">GraphQL</span>
+              <span class="arch-item">REST Endpoints</span>
+            </div>
+          </div>
+          <div class="arch-connector">&#x2193;</div>
+
+          <!-- Orchestration Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-label">Orchestration</span>
+            <div class="arch-layer-content">
+              <span class="arch-item">n8n Core</span>
+              <span class="arch-item">Worker Nodes</span>
+              <span class="arch-item">Queue Manager</span>
+              <span class="arch-item">Error Handler</span>
+              <span class="arch-item">Retry Logic</span>
+            </div>
+          </div>
+          <div class="arch-connector">&#x2193;</div>
+
+          <!-- AI Agent Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-label">AI Agents</span>
+            <div class="arch-layer-content">
+              <span class="arch-item">LangChain Memory</span>
+              <span class="arch-item">RAG Pipeline</span>
+              <span class="arch-item">OpenAI / Claude</span>
+              <span class="arch-item">Custom Models</span>
+              <span class="arch-item">Data Router</span>
+            </div>
+          </div>
+          <div class="arch-connector">&#x2193;</div>
+
+          <!-- Integration Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-label">Integration</span>
+            <div class="arch-layer-content">
+              <span class="arch-item">API Connectors</span>
+              <span class="arch-item">Database Adapters</span>
+              <span class="arch-item">File Processors</span>
+              <span class="arch-item">Auth Manager</span>
+              <span class="arch-item">Rate Limiter</span>
+            </div>
+          </div>
+          <div class="arch-connector">&#x2193;</div>
+
+          <!-- Data Layer -->
+          <div class="arch-layer">
+            <span class="arch-layer-label">Data Sources</span>
+            <div class="arch-layer-content">
+              <span class="arch-item">PostgreSQL</span>
+              <span class="arch-item">MySQL</span>
+              <span class="arch-item">MongoDB</span>
+              <span class="arch-item">Odoo ERP</span>
+              <span class="arch-item">Salesforce</span>
+              <span class="arch-item">HubSpot</span>
+              <span class="arch-item">Legacy DB</span>
+              <span class="arch-item">Flat Files</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Technical Content -->
+  <section class="section bg-dark-alt" aria-label="Technical Deep Dive">
+    <div class="container container-narrow">
+      <article>
+        <header class="reveal">
+          <span class="badge">Technical Deep Dive</span>
+          <h2>Connecting <span class="text-gradient">Legacy Databases</span> to AI Agents</h2>
+        </header>
+
+        <div class="reveal">
+          <p>The biggest challenge enterprises face isn't a lack of data, it's that their most valuable data is trapped in legacy systems that predate modern API standards. We've developed a systematic approach to liberate this data without risky migration projects.</p>
+
+          <h3>Phase 1: Legacy System Assessment</h3>
+          <p>Every integration project begins with a comprehensive audit of your existing infrastructure. We catalog your databases, identify API endpoints (or lack thereof), document authentication mechanisms, and map data dependencies. This assessment typically reveals that 70-80% of "integration blockers" are solvable with the right abstraction layer.</p>
+
+          <p>For systems with no native API, we deploy custom database adapters that read directly from the underlying data store using read-only replicas. This approach ensures zero disruption to your operational systems while making data available for modern consumption.</p>
+
+          <h3>Phase 2: The Abstraction Layer</h3>
+          <p>Instead of point-to-point integrations that create brittle dependency webs, we build an API abstraction layer that normalizes data access across all your systems. This layer handles authentication, rate limiting, payload transformation, and schema validation, presenting a unified interface to upstream consumers.</p>
+
+          <p>Our <a href="https://agenticmarketingpro.com/blog/n8n-workflow-automation/" target="_blank" rel="noopener">n8n workflow automation</a> implementations use this abstraction layer to build orchestrated workflows that coordinate actions across multiple systems atomically. When a workflow triggers, it can read from your legacy ERP, enrich the data via external APIs, process it through <a href="https://agenticmarketingpro.com/blog/ai-api-integration/" target="_blank" rel="noopener">AI-enhanced data routing</a>, and write results back to your modern data warehouse, all within a single transaction.</p>
+
+          <h3>Phase 3: AI Agent Integration</h3>
+          <p>With clean, normalized data flowing through your integration layer, connecting AI agents becomes straightforward. We use LangChain memory modules to give agents context awareness, RAG (Retrieval-Augmented Generation) pipelines to ground responses in your proprietary data, and custom prompt engineering to ensure agents perform tasks according to your business rules.</p>
+
+          <p>The key insight: AI agents are only as good as the data they can access. By solving the integration problem first, we ensure your agents have real-time access to accurate, comprehensive enterprise data.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- Security & Scalability -->
+  <section class="section" aria-label="Security and Scalability">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Infrastructure</span>
+        <h2>Self-Hosted <span class="text-gradient">Security & Scalability</span></h2>
+        <p>Why enterprise teams choose self-hosted automation over SaaS limiters.</p>
+      </div>
+
+      <div class="features-grid">
+        <article class="card feature-card reveal reveal-delay-1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </svg>
+          </div>
+          <h3>Data Sovereignty</h3>
+          <p>Your data never leaves your infrastructure. Self-hosted n8n runs entirely within your VPC or on-premises servers, ensuring compliance with GDPR, HIPAA, SOC 2, and industry-specific regulations. No third-party data processing agreements required.</p>
+        </article>
+
+        <article class="card feature-card reveal reveal-delay-2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/>
+            </svg>
+          </div>
+          <h3>Unlimited Execution</h3>
+          <p>SaaS automation platforms charge per execution and impose hard monthly limits. Self-hosted infrastructure scales with your actual needs, handling millions of executions monthly at a fraction of the cost. No more worrying about hitting caps during peak business periods.</p>
+        </article>
+
+        <article class="card feature-card reveal reveal-delay-3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+              <path d="M7 11V7a5 5 0 0110 0v4"/>
+            </svg>
+          </div>
+          <h3>Enterprise Authentication</h3>
+          <p>Integrate with your existing SSO, LDAP, or SAML identity providers. Role-based access control (RBAC) ensures team members only access workflows and credentials appropriate to their responsibilities. Full audit logging captures every action for compliance review.</p>
+        </article>
+
+        <article class="card feature-card reveal reveal-delay-1">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <circle cx="12" cy="12" r="10"/>
+              <polyline points="12 6 12 12 16 14"/>
+            </svg>
+          </div>
+          <h3>Zero Latency</h3>
+          <p>Self-hosted automation runs within your network, eliminating the round-trip delay to SaaS platforms. Critical workflows triggered by webhooks execute in milliseconds, not seconds. This matters when real-time responsiveness affects customer experience.</p>
+        </article>
+
+        <article class="card feature-card reveal reveal-delay-2">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/>
+              <circle cx="9" cy="7" r="4"/>
+              <path d="M23 21v-2a4 4 0 00-3-3.87"/>
+              <path d="M16 3.13a4 4 0 010 7.75"/>
+            </svg>
+          </div>
+          <h3>Horizontal Scaling</h3>
+          <p>Distribute workflow execution across multiple worker nodes using Redis-backed queue systems. As your automation volume grows, simply add worker instances. Benchmarks show our architectures handle 100,000+ daily executions with sub-second queue latency.</p>
+        </article>
+
+        <article class="card feature-card reveal reveal-delay-3">
+          <div class="card-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/>
+            </svg>
+          </div>
+          <h3>Custom Node Development</h3>
+          <p>When off-the-shelf integrations don't meet your needs, we build custom n8n nodes tailored to your proprietary systems. These nodes become permanent parts of your automation toolkit, maintained and versioned alongside your other infrastructure.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Performance Metrics -->
+  <section class="section bg-dark-alt" aria-label="Performance Metrics">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Proven Results</span>
+        <h2>Deployment <span class="text-gradient">Performance</span></h2>
+        <p>Real metrics from production API integration deployments. See our <a href="https://agenticmarketingpro.com/case-studies/" target="_blank" rel="noopener">full case studies</a> for detailed breakdowns.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-card-number">100K+</div>
+          <div class="stat-card-label">Daily Executions Handled</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-card-number">99.97%</div>
+          <div class="stat-card-label">Uptime SLA Achieved</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-3">
+          <div class="stat-card-number">&lt;50ms</div>
+          <div class="stat-card-label">Average API Latency</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-4">
+          <div class="stat-card-number">70%</div>
+          <div class="stat-card-label">Cost Reduction vs SaaS</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-1">
+          <div class="stat-card-number">60+</div>
+          <div class="stat-card-label">AI Agents Deployed</div>
+        </div>
+        <div class="stat-card reveal reveal-delay-2">
+          <div class="stat-card-number">Zero</div>
+          <div class="stat-card-label">Data Breaches (Self-Hosted)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Resources Section -->
+  <section class="section" aria-label="Technical Resources">
+    <div class="container">
+      <div class="section-header reveal">
+        <span class="badge">Deep Dives</span>
+        <h2>Related <span class="text-gradient">Technical Resources</span></h2>
+        <p>Detailed guides on n8n orchestration, AI integration, and automation architecture from our engineering team.</p>
+      </div>
+      <div class="blog-links">
+        <article class="blog-link-card reveal reveal-delay-1">
+          <span class="category">Automation Tools</span>
+          <h4>How Much Does It Cost to Self Host N8n for Marketing Automation</h4>
+          <p>Self-hosting n8n for marketing automation is not entirely free, as costs extend beyond the software itself to include infrastructure, maintenance, and operational overhead. We break down the real TCO.</p>
+          <a href="https://agenticmarketingpro.com/n8n-self-hosting-costs/" class="read-more" target="_blank" rel="noopener">Read More &rarr;</a>
+        </article>
+        <article class="blog-link-card reveal reveal-delay-2">
+          <span class="category">n8n AI Agent Development</span>
+          <h4>Best Way to Connect N8n to Custom Postgres Database for Agent Memory</h4>
+          <p>Architecting a resilient, high-performance PostgreSQL connection layer for n8n agents that maintains conversational context and long-term memory.</p>
+          <a href="https://agenticmarketingpro.com/n8n-postgresql-memory/" class="read-more" target="_blank" rel="noopener">Read More &rarr;</a>
+        </article>
+        <article class="blog-link-card reveal reveal-delay-3">
+          <span class="category">n8n AI Agent Development</span>
+          <h4>How to Build an N8n AI Agent with Langchain Memory</h4>
+          <p>Integrate LangChain's memory modules into your n8n workflows to enable conversational context, making your agents smarter and more contextually aware.</p>
+          <a href="https://agenticmarketingpro.com/n8n-langchain-memory/" class="read-more" target="_blank" rel="noopener">Read More &rarr;</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" aria-label="Call to Action">
+    <div class="container">
+      <div class="reveal">
+        <h2>Ready to <span class="text-gradient">Architect Your Integration?</span></h2>
+        <p>Schedule a 45-minute architecture session with our integration engineers. We'll map your current systems, identify connectivity opportunities, and design a custom automation roadmap.</p>
+        <div class="cta-buttons">
+          <a href="https://agenticmarketingpro.com/book-appointment/" class="btn btn-primary" target="_blank" rel="noopener">
+            Book an Architecture Session
+          </a>
+          <a href="https://agenticmarketingpro.com/case-studies/" class="btn btn-outline-accent" target="_blank" rel="noopener">
+            View Case Studies
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="nav-brand">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="url(#foot-gradient)"/>
+              <path d="M8 16h6v6H8zM18 10h6v6h-6zM8 10h6v4H8zM18 18h6v4h-6z" fill="white" opacity="0.9"/>
+              <defs>
+                <linearGradient id="foot-gradient" x1="0" y1="0" x2="32" y2="32">
+                  <stop offset="0%" stop-color="#00d4c8"/>
+                  <stop offset="100%" stop-color="#00a8ff"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Agentic Marketing Pro</span>
+          </a>
+          <p>Enterprise AI automation and API integration services. We connect your systems, automate your workflows, and scale your operations.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./orchestration.html">Workflow Orchestration</a></li>
+            <li><a href="./glossary.html">Integration Glossary</a></li>
+            <li><a href="https://agenticmarketingpro.com/automation-business-intelligence/" target="_blank" rel="noopener">Automation & BI</a></li>
+            <li><a href="https://agenticmarketingpro.com/custom-software-digital-infrastructure/" target="_blank" rel="noopener">Custom Software</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://agenticmarketingpro.com/about-us/" target="_blank" rel="noopener">About Us</a></li>
+            <li><a href="https://agenticmarketingpro.com/case-studies/" target="_blank" rel="noopener">Case Studies</a></li>
+            <li><a href="https://agenticmarketingpro.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+            <li><a href="https://agenticmarketingpro.com/contact-us/" target="_blank" rel="noopener">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://agenticmarketingpro.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://agenticmarketingpro.com/terms-of-service/" target="_blank" rel="noopener">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Agentic Marketing Pro. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://x.com/agenticmpro" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/agenticmarketingpro" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/agentic-marketing-pro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@AgenticMarketingPro" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>

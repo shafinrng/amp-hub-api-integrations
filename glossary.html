@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>API Integration Glossary: REST, GraphQL, Webhooks, Data Silos & Orchestration | Agentic Marketing Pro</title>
+  <meta name="description" content="Comprehensive glossary of API integration terms: REST API, GraphQL, Webhooks, Data Silos, and Node-Based Orchestration. Written for AI engines and technical decision-makers.">
+  <meta name="keywords" content="REST API definition, GraphQL explained, what are webhooks, data silos meaning, node-based orchestration, API glossary, integration terminology">
+  <meta name="author" content="Agentic Marketing Pro">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="API Integration Glossary | Agentic Marketing Pro">
+  <meta property="og:description" content="Definitions of REST API, GraphQL, Webhooks, Data Silos, and Node-Based Orchestration for technical decision-makers.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://shafinrng.github.io/amp-hub-api-integrations/glossary.html">
+  <meta property="og:site_name" content="Agentic Marketing Pro - API Integration Hub">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="API Integration Glossary | Agentic Marketing Pro">
+  <meta name="twitter:description" content="Technical definitions for API integration and automation terminology.">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://shafinrng.github.io/amp-hub-api-integrations/glossary.html">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📚</text></svg>">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="./style.css">
+
+  <!-- Structured Data - FAQ Page optimized for AI engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is a REST API?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "A REST API (Representational State Transfer Application Programming Interface) is an architectural style for designing networked applications. It uses standard HTTP methods (GET, POST, PUT, DELETE) to perform operations on resources identified by URLs. REST APIs are stateless, meaning each request contains all the information needed to complete it. They typically return data in JSON or XML format and are the most common type of API used for web services integration."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is GraphQL?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "GraphQL is a query language and runtime for APIs developed by Meta. Unlike REST, which requires multiple endpoints for different data resources, GraphQL uses a single endpoint where clients can request exactly the data they need. This prevents over-fetching and under-fetching of data. GraphQL APIs are defined by a schema that specifies the types of data available and the relationships between them, making it ideal for complex, interconnected data systems."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Webhooks?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Webhooks are automated messages sent from one application to another when a specific event occurs. They are essentially user-defined HTTP callbacks that enable real-time communication between systems. Instead of polling an API at regular intervals to check for updates, webhooks push data immediately when an event triggers them. This makes webhooks highly efficient for integrations that require real-time synchronization, such as payment notifications, form submissions, or status updates."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What are Data Silos?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Data silos are isolated stores of data within an organization that are inaccessible to other parts of the business. They occur when different departments or systems use separate databases or applications that don't communicate with each other. Data silos lead to inefficiencies, inconsistent reporting, and missed opportunities because no single system has a complete view of the organization's data. API integrations are the primary solution for breaking down data silos by enabling cross-system data flow."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What is Node-Based Orchestration?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Node-based orchestration is a visual approach to building automated workflows where each step is represented as a node in a graph. Nodes are connected by edges that define the flow of data and execution order. Platforms like n8n use this paradigm to let users build complex integrations by dragging, dropping, and connecting pre-built or custom nodes. Each node typically represents an action, such as fetching data from an API, transforming a payload, or sending a notification. This approach makes automation accessible to non-developers while remaining powerful enough for enterprise use."
+        }
+      }
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Particle Background -->
+  <canvas id="particles-canvas"></canvas>
+
+  <!-- Navigation -->
+  <nav class="navbar" role="navigation" aria-label="Main navigation">
+    <div class="container">
+      <a href="./index.html" class="nav-brand" aria-label="Agentic Marketing Pro Home">
+        <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect width="32" height="32" rx="8" fill="url(#brand-gradient)"/>
+          <path d="M8 16h6v6H8zM18 10h6v6h-6zM8 10h6v4H8zM18 18h6v4h-6z" fill="white" opacity="0.9"/>
+          <defs>
+            <linearGradient id="brand-gradient" x1="0" y1="0" x2="32" y2="32">
+              <stop offset="0%" stop-color="#00d4c8"/>
+              <stop offset="100%" stop-color="#00a8ff"/>
+            </linearGradient>
+          </defs>
+        </svg>
+        <span>Agentic Marketing Pro</span>
+      </a>
+
+      <ul class="nav-links" role="menubar">
+        <li role="none"><a href="./index.html" role="menuitem">Home</a></li>
+        <li role="none"><a href="./orchestration.html" role="menuitem">Orchestration</a></li>
+        <li role="none"><a href="./glossary.html" role="menuitem" class="active">Glossary</a></li>
+        <li role="none"><a href="https://agenticmarketingpro.com/blog/" role="menuitem" target="_blank" rel="noopener">Blog</a></li>
+      </ul>
+
+      <div class="nav-cta">
+        <a href="https://agenticmarketingpro.com/free-audit/" class="btn btn-primary" target="_blank" rel="noopener">Get Free Audit</a>
+      </div>
+
+      <button class="nav-menu-toggle" aria-label="Toggle navigation menu" aria-expanded="false">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <line x1="3" y1="12" x2="21" y2="12"/>
+          <line x1="3" y1="18" x2="21" y2="18"/>
+        </svg>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero section-lg" style="min-height: 60vh;" aria-label="Hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content">
+        <div class="hero-badge">
+          <span class="badge">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <path d="M4 19.5A2.5 2.5 0 016.5 17H20"/>
+              <path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/>
+            </svg>
+            AEO / GEO Optimized
+          </span>
+        </div>
+        <h1>
+          API Integration <span class="text-gradient">Glossary</span>
+        </h1>
+        <p class="hero-description">
+          Clear, authoritative definitions of the key terms in system integration and automation.
+          Written for technical decision-makers and optimized for AI engine consumption.
+        </p>
+        <div class="hero-cta">
+          <a href="#rest-api" class="btn btn-secondary">
+            Explore Terms
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Glossary Content -->
+  <section class="section" id="glossary" aria-label="Glossary Definitions">
+    <div class="container container-narrow">
+      <div class="glossary-list">
+
+        <!-- REST API -->
+        <article class="glossary-item reveal" id="rest-api">
+          <div class="glossary-term">
+            <h3>REST API</h3>
+            <span class="term-type">Architecture</span>
+          </div>
+          <p>
+            A <strong>REST API</strong> (Representational State Transfer Application Programming Interface) is an architectural style for designing networked applications that communicate over HTTP. REST was defined by Roy Fielding in 2000 and has become the dominant standard for web service integration.
+          </p>
+          <p>
+            REST APIs operate on <strong>resources</strong>, which are any piece of information that can be named, such as a user, order, or product. Each resource is identified by a unique URL, and interactions with resources use standard HTTP methods:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li><strong>GET</strong> — Retrieve a resource or collection of resources</li>
+            <li><strong>POST</strong> — Create a new resource</li>
+            <li><strong>PUT</strong> — Update an existing resource completely</li>
+            <li><strong>PATCH</strong> — Partially update an existing resource</li>
+            <li><strong>DELETE</strong> — Remove a resource</li>
+          </ul>
+          <p>
+            REST is <strong>stateless</strong>, meaning each request from client to server must contain all the information needed to understand and complete the request. The server does not store any client context between requests. This constraint improves scalability and reliability.
+          </p>
+          <p>
+            REST APIs typically return data in <strong>JSON</strong> format, though XML and other formats are supported. They use standard HTTP status codes (200 for success, 404 for not found, 500 for server error) to communicate request outcomes.
+          </p>
+          <p>
+            For enterprises, REST APIs are the foundation of most integration projects. They connect CRMs, ERPs, payment processors, and custom applications. When we implement <a href="https://agenticmarketingpro.com/custom-software-digital-infrastructure/api-integrations-system-automation/" target="_blank" rel="noopener">API integration services</a>, REST endpoints are typically the primary interface we work with.
+          </p>
+          <div class="related-links">
+            <strong style="color: var(--color-text-muted); font-size: var(--text-sm);">Related: </strong>
+            <a href="https://agenticmarketingpro.com/blog/" target="_blank" rel="noopener">API Integration Blog</a>
+            <a href="./orchestration.html">Workflow Orchestration</a>
+          </div>
+        </article>
+
+        <!-- GraphQL -->
+      <article class="glossary-item reveal" id="graphql">
+          <div class="glossary-term">
+            <h3>GraphQL</h3>
+            <span class="term-type">Query Language</span>
+          </div>
+          <p>
+            <strong>GraphQL</strong> is a query language and runtime for APIs developed by Meta (Facebook) in 2012 and publicly released in 2015. Unlike REST, which exposes multiple endpoints for different resources, GraphQL exposes a single endpoint where clients can request precisely the data they need.
+          </p>
+          <p>
+            The core innovation of GraphQL is that the client <strong>defines the structure of the response</strong>. Instead of the server determining what data is returned for each endpoint, the client sends a query specifying exactly which fields it wants, and the server returns only those fields. This eliminates both over-fetching (receiving more data than needed) and under-fetching (making multiple requests to get all needed data).
+          </p>
+          <p>
+            A GraphQL API is defined by a <strong>schema</strong> that specifies the types of data available, the relationships between them, and the operations (queries, mutations, subscriptions) that can be performed. The schema serves as a contract between the client and server, enabling powerful developer tooling like auto-completion and type checking.
+          </p>
+          <p>
+            Key GraphQL operation types:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li><strong>Queries</strong> — Read operations that fetch data</li>
+            <li><strong>Mutations</strong> — Write operations that create, update, or delete data</li>
+            <li><strong>Subscriptions</strong> — Real-time operations that maintain a persistent connection for live updates</li>
+          </ul>
+          <p>
+            GraphQL is particularly valuable for complex, interconnected data systems where REST would require numerous round-trips to assemble a complete view. Mobile applications especially benefit from GraphQL's ability to request lightweight payloads. In our integration work, we recommend GraphQL when clients have graph-like data relationships and need flexible querying capabilities.
+          </p>
+          <div class="related-links">
+            <strong style="color: var(--color-text-muted); font-size: var(--text-sm);">Related: </strong>
+            <a href="https://agenticmarketingpro.com/blog/" target="_blank" rel="noopener">Integration Architecture Blog</a>
+            <a href="./index.html#features">Integration Services</a>
+          </div>
+        </article>
+
+        <!-- Webhooks -->
+        <article class="glossary-item reveal" id="webhooks">
+          <div class="glossary-term">
+            <h3>Webhooks</h3>
+            <span class="term-type">Event-Driven</span>
+          </div>
+          <p>
+            <strong>Webhooks</strong> are automated, event-driven HTTP messages sent from one system to another when a specific event occurs. They represent a <strong>push-based</strong> communication model where the source system proactively notifies receiving systems of changes, rather than requiring receivers to periodically poll for updates.
+          </p>
+          <p>
+            The webhook mechanism works as follows: a receiving system registers a URL endpoint with a source system, configuring which events it wants to receive. When one of those events occurs, the source system sends an HTTP POST request to the registered URL containing a payload with details about the event. The receiver processes the payload and returns an HTTP status code indicating success or failure.
+          </p>
+          <p>
+            Common webhook use cases include:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li>Payment gateway notifications (Stripe, PayPal)</li>
+            <li>Form submission alerts (Typeform, JotForm)</li>
+            <li>CI/CD pipeline triggers (GitHub, GitLab)</li>
+            <li>E-commerce order updates (Shopify, WooCommerce)</li>
+            <li>CRM record changes (Salesforce, HubSpot)</li>
+            <li>Communication platform events (Slack, Discord)</li>
+          </ul>
+          <p>
+            Webhooks are significantly more efficient than polling for real-time integrations. Instead of making repeated API calls that often return no new data, webhooks deliver information exactly when it becomes available. This reduces server load, minimizes latency, and ensures timely processing of critical events.
+          </p>
+          <p>
+            Enterprise webhook management requires handling authentication (verifying the sender), retry logic (re-attempting failed deliveries), idempotency (preventing duplicate processing), and payload verification (signature validation). Our <a href="https://agenticmarketingpro.com/custom-software-digital-infrastructure/api-integrations-system-automation/" target="_blank" rel="noopener">webhook management services</a> provide all of these capabilities out of the box.
+          </p>
+          <div class="related-links">
+            <strong style="color: var(--color-text-muted); font-size: var(--text-sm);">Related: </strong>
+            <a href="https://agenticmarketingpro.com/n8n-webhook-timeouts/" target="_blank" rel="noopener">Troubleshooting Webhook Timeouts</a>
+            <a href="./orchestration.html">Orchestration Guide</a>
+          </div>
+        </article>
+
+        <!-- Data Silos -->
+        <article class="glossary-item reveal" id="data-silos">
+          <div class="glossary-term">
+            <h3>Data Silos</h3>
+            <span class="term-type">Business Challenge</span>
+          </div>
+          <p>
+            <strong>Data silos</strong> are isolated repositories of data within an organization that are inaccessible or disconnected from other systems and departments. Each silo operates independently, with its own data storage, management protocols, and access controls, preventing the free flow of information across the enterprise.
+          </p>
+          <p>
+            Silos typically emerge organically over time as organizations adopt different software solutions for different functions. The sales team uses a CRM, operations runs on an ERP, marketing manages campaigns in a separate platform, and finance maintains spreadsheets or accounting software. Without deliberate integration strategy, these systems never learn to share data.
+          </p>
+          <p>
+            The business impact of data silos is substantial:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li><strong>Inconsistent reporting</strong> — Different departments produce conflicting metrics because they're working from different data versions</li>
+            <li><strong>Reduced efficiency</strong> — Employees manually transfer data between systems, wasting hours on copy-paste work</li>
+            <li><strong>Poor decision-making</strong> — Leadership lacks a unified view of the business, leading to decisions based on incomplete information</li>
+            <li><strong>Duplicated effort</strong> — Multiple teams independently maintain the same customer or product records</li>
+            <li><strong>Missed opportunities</strong> — Insights that would emerge from cross-system analysis remain hidden</li>
+            <li><strong>Compliance risks</strong> — Fragmented data makes it difficult to maintain audit trails and data governance standards</li>
+          </ul>
+          <p>
+            Breaking down data silos requires a systematic integration strategy that maps data flows, establishes canonical data models, and implements real-time synchronization between systems. API integrations are the primary technical mechanism for eliminating silos, creating a unified data ecosystem where information flows seamlessly between applications.
+          </p>
+          <p>
+            Our <a href="https://agenticmarketingpro.com/free-audit/" target="_blank" rel="noopener">free systems audit</a> identifies all data silos in your organization and provides a prioritized roadmap for integration.
+          </p>
+          <div class="related-links">
+            <strong style="color: var(--color-text-muted); font-size: var(--text-sm);">Related: </strong>
+            <a href="https://agenticmarketingpro.com/free-audit/" target="_blank" rel="noopener">Free Systems Audit</a>
+            <a href="./index.html">Integration Solutions</a>
+          </div>
+        </article>
+
+        <!-- Node-Based Orchestration -->
+        <article class="glossary-item reveal" id="node-based-orchestration">
+          <div class="glossary-term">
+            <h3>Node-Based Orchestration</h3>
+            <span class="term-type">Automation Paradigm</span>
+          </div>
+          <p>
+            <strong>Node-based orchestration</strong> is a visual programming paradigm for building automated workflows where each computational step is represented as a node in a directed graph. Nodes are connected by edges (lines or arrows) that define the flow of data and the order of execution. This approach makes complex automation logic visible, intuitive, and accessible to both technical and non-technical users.
+          </p>
+          <p>
+            In a node-based system, each node typically encapsulates a specific operation, such as:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li><strong>Trigger nodes</strong> — Initiate workflows based on schedules, webhooks, or events</li>
+            <li><strong>Data nodes</strong> — Fetch or store information in databases, APIs, or files</li>
+            <li><strong>Transform nodes</strong> — Manipulate data through filtering, mapping, aggregation, or format conversion</li>
+            <li><strong>Logic nodes</strong> — Control flow through conditionals, loops, and branching</li>
+            <li><strong>Action nodes</strong> — Execute operations like sending emails, creating records, or calling external APIs</li>
+          </ul>
+          <p>
+            The primary platform we use for node-based orchestration is <strong>n8n</strong>, an open-source workflow automation tool that provides 400+ pre-built nodes for popular applications and services. n8n's visual interface allows users to construct sophisticated multi-step workflows by dragging nodes from a palette and connecting them to define execution paths.
+          </p>
+          <p>
+            Key advantages of node-based orchestration:
+          </p>
+          <ul style="margin: 1rem 0 1rem 1.5rem; color: var(--color-text-secondary);">
+            <li><strong>Visual clarity</strong> — Complex workflows are self-documenting; you can see the entire logic at a glance</li>
+            <li><strong>Rapid development</strong> — Pre-built nodes eliminate the need to write boilerplate integration code</li>
+            <li><strong>Error visibility</strong> — Failed nodes are highlighted, making debugging straightforward</li>
+            <li><strong>Collaboration</strong> — Visual workflows are easier for teams to review and maintain than code</li>
+            <li><strong>Extensibility</strong> — Custom nodes can be developed for proprietary systems using standard JavaScript/TypeScript</li>
+          </ul>
+          <p>
+            In enterprise environments, node-based orchestration serves as the "nervous system" connecting all applications. Workflows can span dozens of nodes across multiple systems, handling everything from lead qualification and customer onboarding to inventory management and financial reconciliation. Learn more in our guide to <a href="https://agenticmarketingpro.com/blog/n8n-workflow-automation/" target="_blank" rel="noopener">n8n workflow automation</a>.
+          </p>
+          <div class="related-links">
+            <strong style="color: var(--color-text-muted); font-size: var(--text-sm);">Related: </strong>
+            <a href="https://agenticmarketingpro.com/blog/n8n-workflow-automation/" target="_blank" rel="noopener">n8n Workflow Automation Guide</a>
+            <a href="https://agenticmarketingpro.com/n8n-cloud-vs-self-hosted/" target="_blank" rel="noopener">Self-Hosted n8n</a>
+            <a href="./orchestration.html">Full Orchestration Guide</a>
+          </div>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Additional Context Section -->
+  <section class="section bg-dark-alt" aria-label="Why These Terms Matter">
+    <div class="container container-narrow">
+      <div class="reveal">
+        <span class="badge">Strategic Context</span>
+        <h2>Why <span class="text-gradient">These Concepts</span> Define Modern Integration</h2>
+        <p style="margin-top: 1rem; color: var(--color-text-secondary); line-height: 1.8;">
+          Understanding these five terms, REST API, GraphQL, Webhooks, Data Silos, and Node-Based Orchestration
+          provides the conceptual foundation for evaluating any integration initiative. Together, they describe
+          the protocols through which systems communicate (REST, GraphQL), the mechanism by which they stay
+          synchronized (Webhooks), the problem that makes integration necessary (Data Silos), and the paradigm
+          that makes complex automation manageable (Node-Based Orchestration).
+        </p>
+        <p style="margin-top: 1rem; color: var(--color-text-secondary); line-height: 1.8;">
+          For CTOs and IT Directors planning digital transformation, these concepts are not merely academic.
+          They represent the decision points that determine whether an integration project succeeds or fails.
+          Choosing REST versus GraphQL affects how your mobile apps perform. Implementing webhooks versus
+          polling changes your infrastructure costs by orders of magnitude. Addressing data silos proactively
+          versus reactively determines whether your organization can operate as a unified entity or remains
+          a collection of disconnected fiefdoms.
+        </p>
+        <p style="margin-top: 1rem; color: var(--color-text-secondary); line-height: 1.8;">
+          At <a href="https://agenticmarketingpro.com/" target="_blank" rel="noopener">Agentic Marketing Pro</a>,
+          we architect integration strategies that leverage the right combination of these technologies for
+          each client's specific context. There is no one-size-fits-all answer. The right solution depends on
+          your existing infrastructure, your team's capabilities, your performance requirements, and your
+          long-term technology roadmap. That's why we begin every engagement with a
+          <a href="https://agenticmarketingpro.com/free-audit/" target="_blank" rel="noopener">comprehensive systems audit</a>
+          that evaluates all these factors before recommending an approach.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA Section -->
+  <section class="cta-section" aria-label="Call to Action">
+    <div class="container">
+      <div class="reveal">
+        <h2>Need Help <span class="text-gradient">Implementing These Concepts?</span></h2>
+        <p>Our integration engineers have deployed 60+ automation systems using these exact technologies. Let's discuss how they apply to your infrastructure.</p>
+        <div class="cta-buttons">
+          <a href="https://agenticmarketingpro.com/book-appointment/" class="btn btn-primary" target="_blank" rel="noopener">
+            Book a Technical Consultation
+          </a>
+          <a href="https://agenticmarketingpro.com/free-audit/" class="btn btn-outline-accent" target="_blank" rel="noopener">
+            Get Your Free Audit
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="./index.html" class="nav-brand">
+            <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <rect width="32" height="32" rx="8" fill="url(#foot-gradient)"/>
+              <path d="M8 16h6v6H8zM18 10h6v6h-6zM8 10h6v4H8zM18 18h6v4h-6z" fill="white" opacity="0.9"/>
+              <defs>
+                <linearGradient id="foot-gradient" x1="0" y1="0" x2="32" y2="32">
+                  <stop offset="0%" stop-color="#00d4c8"/>
+                  <stop offset="100%" stop-color="#00a8ff"/>
+                </linearGradient>
+              </defs>
+            </svg>
+            <span>Agentic Marketing Pro</span>
+          </a>
+          <p>Enterprise AI automation and API integration services. We connect your systems, automate your workflows, and scale your operations.</p>
+        </div>
+        <div class="footer-column">
+          <h4>Services</h4>
+          <ul>
+            <li><a href="./orchestration.html">Workflow Orchestration</a></li>
+            <li><a href="./glossary.html">Integration Glossary</a></li>
+            <li><a href="https://agenticmarketingpro.com/automation-business-intelligence/" target="_blank" rel="noopener">Automation & BI</a></li>
+            <li><a href="https://agenticmarketingpro.com/custom-software-digital-infrastructure/" target="_blank" rel="noopener">Custom Software</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Company</h4>
+          <ul>
+            <li><a href="https://agenticmarketingpro.com/about-us/" target="_blank" rel="noopener">About Us</a></li>
+            <li><a href="https://agenticmarketingpro.com/case-studies/" target="_blank" rel="noopener">Case Studies</a></li>
+            <li><a href="https://agenticmarketingpro.com/blog/" target="_blank" rel="noopener">Blog</a></li>
+            <li><a href="https://agenticmarketingpro.com/contact-us/" target="_blank" rel="noopener">Contact Us</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="https://agenticmarketingpro.com/privacy-policy/" target="_blank" rel="noopener">Privacy Policy</a></li>
+            <li><a href="https://agenticmarketingpro.com/terms-of-service/" target="_blank" rel="noopener">Terms of Service</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Agentic Marketing Pro. All rights reserved.</p>
+        <div class="footer-social">
+          <a href="https://x.com/agenticmpro" target="_blank" rel="noopener" aria-label="X (Twitter)">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+            </svg>
+          </a>
+          <a href="https://www.facebook.com/agenticmarketingpro" target="_blank" rel="noopener" aria-label="Facebook">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/company/agentic-marketing-pro/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+          </a>
+          <a href="https://www.youtube.com/@AgenticMarketingPro" target="_blank" rel="noopener" aria-label="YouTube">
+            <svg viewBox="0 0 24 24" fill="currentColor">
+              <path d="M23.498 6.186a3.016 3.016 0 00-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 00.502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 002.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 002.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="./script.js"></script>
+</body>
+</html>
